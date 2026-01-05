@@ -34,7 +34,7 @@ I am currently deep-diving into **Wazuh EDR/XDR**. My active lab environment con
 ---
 
 ### 📈 GitHub Stats
-(https://github-readme-stats.vercel.app/api?username=Moses-Kinuthia-HERE&show_icons=true&theme=tokyonight)
+![My GitHub Stats](https://github-readme-stats.vercel.app/api?username=Moses-Kinuthia&show_icons=true&theme=tokyonight)
 
 ---
 
