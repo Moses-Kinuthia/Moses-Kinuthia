@@ -34,12 +34,12 @@ I am currently deep-diving into **Wazuh EDR/XDR**. My active lab environment con
 ---
 
 ### 📈 GitHub Stats
-![Your GitHub Stats](https://github-readme-stats.vercel.app/api?username=YOUR-USERNAME-HERE&show_icons=true&theme=tokyonight)
+(https://github-readme-stats.vercel.app/api?username=Moses-Kinuthia-HERE&show_icons=true&theme=tokyonight)
 
 ---
 
 ### 🤝 Connect with Me
-* **LinkedIn:** [www.linkedin.com/in/moses-waweru-kinuthia]
+* **LinkedIn:** www.linkedin.com/in/moses-waweru-kinuthia
 
 > "The quiet professional of the network; seeing everything, staying hidden until the alert fires."
 
