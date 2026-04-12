@@ -30,7 +30,7 @@ I built and operate a two-machine SOC home lab running a realistic mini-enterpri
 ---
 
 #### **Network Architecture**
-```text
+
 [Internet]
      |
 [Home Router] (192.168.x.1)
@@ -48,27 +48,63 @@ I built and operate a two-machine SOC home lab running a realistic mini-enterpri
 
 ---
 
+#### **What I've Built and Configured**
+* ✅ **pfSense firewall** with multi-interface routing (WAN/LAN/OPT1)
+* ✅ **Network segmentation** — attack segment isolated from AD/management
+* ✅ **Wazuh SIEM** with live alert ingestion from 2 Windows agents
+* ✅ **Sysmon** deployed on both Windows machines for enhanced telemetry
+* ✅ **Active Directory domain (SOCLAB.local)** with DC and joined client
+* ✅ **Wazuh agents** reporting to SIEM with MITRE ATT&CK mapping
+* ✅ **pfSense firewall rules** with default-deny and explicit allow policies
+* ✅ **Centralized agent configuration** pushed from Wazuh manager
+
+👉 [**Full Lab Documentation →**](https://github.com/Kinuthia-Moses/soc-home-lab)
+
+---
+
+### 🔴 SOC Simulations
+| # | Simulation | Attack Tools | Detection Method | MITRE Technique | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 001 | SMB Brute Force | Hydra, Metasploit | Wazuh Rule 18152 — Event ID 4625 | T1110 | ✅ Complete |
+| 002 | Network Recon | Nmap | Wazuh + Suricata alerts | T1046 | ✅ Complete |
+| 003 | SMB Enumeration | enum4linux | Wazuh event correlation | T1087 | ✅ Complete |
+| 004 | RDP Brute Force | Hydra | Event ID 4625 pattern | T1110.001 | 🔄 In Progress |
+
+---
+
+### 🛠️ Technical Skills
+* **Security Tools:** Wazuh, pfSense, Kali Linux, Nmap, Hydra, Metasploit, enum4linux, Sysmon, Wireshark
+* **Infrastructure:** Windows Server 2019, Active Directory, Group Policy, VirtualBox, pfSense
+* **Concepts:** SIEM / Log Analysis, Incident Detection, Firewall Rule Management, Network Segmentation, MITRE ATT&CK, Windows Event IDs
+* **Compliance:** PCI DSS, HIPAA, GDPR, NIST (Wazuh-mapped)
+
+---
+
+#### **📊 Key Windows Event IDs I Monitor**
+* `4625` Failed logon (Brute force detection)
+* `4624` Successful logon (Lateral movement)
+* `4720` Account created (Persistence)
+* `4726` Account deleted (Defense evasion)
+* `4648` Explicit credential use (Pass-the-hash)
+* `4672` Special privileges assigned (Privilege escalation)
+* `5152` WFP blocked packet (Network anomaly)
+
+---
+
+### 📁 Featured Repositories
+* [**soc-home-lab**](https://github.com/Kinuthia-Moses/soc-home-lab) – Full documentation of my SOC lab architecture and configs.
+* [**simulation-writeups**](https://github.com/Kinuthia-Moses/simulation-writeups) – Incident-style writeups for each SOC simulation.
+
+---
+
 ### 📈 GitHub Stats
 ![My GitHub Stats](https://github-readme-stats.vercel.app/api?username=Moses-Kinuthia&show_icons=true&theme=tokyonight)
 
 ---
 
-### 🤝 Connect with Me
+###🤝 Connect with Me
 * **LinkedIn:** www.linkedin.com/in/moses-waweru-kinuthia
 
 > "The quiet professional of the network; seeing everything, staying hidden until the alert fires."
 
 <!--
-**Moses-Kinuthia/Moses-Kinuthia** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
