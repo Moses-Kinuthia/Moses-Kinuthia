@@ -97,7 +97,7 @@ I built and operate a two-machine SOC home lab running a realistic mini-enterpri
 
 ---
 
-###🤝 Connect with Me
+### 🤝 Connect with Me
 * **LinkedIn:** www.linkedin.com/in/moses-waweru-kinuthia
 
 > "The quiet professional of the network; seeing everything, staying hidden until the alert fires."
