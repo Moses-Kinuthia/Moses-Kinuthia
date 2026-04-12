@@ -58,7 +58,7 @@ I built and operate a two-machine SOC home lab running a realistic mini-enterpri
 * ✅ **pfSense firewall rules** with default-deny and explicit allow policies
 * ✅ **Centralized agent configuration** pushed from Wazuh manager
 
-👉 [**Full Lab Documentation →**](https://github.com/Kinuthia-Moses/soc-home-lab)
+👉 [**Full Lab Documentation →**][soc-home-lab](https://github.com/Kinuthia-Moses/soc-home-lab)
 
 ---
 
@@ -92,8 +92,8 @@ I built and operate a two-machine SOC home lab running a realistic mini-enterpri
 ---
 
 ### 📁 Featured Repositories
-* [**soc-home-lab**](https://github.com/Kinuthia-Moses/soc-home-lab) – Full documentation of my SOC lab architecture and configs.
-* [**simulation-writeups**](https://github.com/Kinuthia-Moses/simulation-writeups) – Incident-style writeups for each SOC simulation.
+* [**soc-home-lab**][soc-home-lab](https://github.com/Kinuthia-Moses/soc-home-lab) – Full documentation of my SOC lab architecture and configs.
+* [**simulation-writeups**][simulation-writeups](https://github.com/Kinuthia-Moses/simulation-writeups) – Incident-style writeups for each SOC simulation.
 
 ---
 
