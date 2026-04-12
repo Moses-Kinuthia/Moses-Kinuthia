@@ -30,7 +30,7 @@ I built and operate a two-machine SOC home lab running a realistic mini-enterpri
 ---
 
 #### **Network Architecture**
-
+```text
 [Internet]
      |
 [Home Router] (192.168.x.1)
@@ -45,7 +45,7 @@ I built and operate a two-machine SOC home lab running a realistic mini-enterpri
           ├── Kali Linux (10.0.0.x)
           ├── Windows Server 2019 (DC01: 10.0.0.x)
           └── Windows Enterprise (WKSTN01: 10.0.0.x)
-
+```
 ---
 
 #### **What I've Built and Configured**
@@ -94,11 +94,6 @@ I built and operate a two-machine SOC home lab running a realistic mini-enterpri
 ### 📁 Featured Repositories
 * [**soc-home-lab**](https://github.com/Kinuthia-Moses/soc-home-lab) – Full documentation of my SOC lab architecture and configs.
 * [**simulation-writeups**](https://github.com/Kinuthia-Moses/simulation-writeups) – Incident-style writeups for each SOC simulation.
-
----
-
-### 📈 GitHub Stats
-![My GitHub Stats](https://github-readme-stats.vercel.app/api?username=Moses-Kinuthia&show_icons=true&theme=tokyonight)
 
 ---
 
