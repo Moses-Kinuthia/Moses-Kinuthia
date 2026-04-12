@@ -1,11 +1,16 @@
 # 🛡️ Moses's Security Operations Center
 
-### 👨‍💻 Aspiring SOC Analyst | Blue Teamer | Threat Hunter
+### 👨‍💻 SOC Analyst | Blue Teamer | Threat Hunter
 
 Welcome to my digital workshop. I focus on **defensive security**, monitoring network telemetry, and building resilient environments. I believe that security is not a product, but a continuous process of detection and response.
 
 ---
+### 🏅 Certifications
+**CompTIA Security+** ✅ 
+**Cisco CyberOps Associate** ✅ 
+**Certified in Cybersecurity (CC)** ✅ 
 
+---
 ### 🔍 Current Mission: SIEM & Telemetry
 I am currently deep-diving into **Wazuh EDR/XDR**. My active lab environment consists of:
 * **Wazuh Manager:** Hosted on VirtualBox.
