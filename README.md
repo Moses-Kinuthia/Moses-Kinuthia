@@ -6,35 +6,45 @@ Welcome to my digital workshop. I focus on **defensive security**, monitoring ne
 
 ---
 ### 🏅 Certifications
-**CompTIA Security+** ✅ 
-**Cisco CyberOps Associate** ✅ 
-**Certified in Cybersecurity (CC)** ✅ 
-
----
-### 🔍 Current Mission: SIEM & Telemetry
-I am currently deep-diving into **Wazuh EDR/XDR**. My active lab environment consists of:
-* **Wazuh Manager:** Hosted on VirtualBox.
-* **Endpoints:** Windows (Host) & Linux (VM) agents.
-* **Focus:** Mapping alerts to the **MITRE ATT&CK®** framework and fine-tuning detection rules.
-
----
-
-### 🛠️ Technical Arsenal
-
-* **SIEM/EDR:** Wazuh, ELK Stack (Learning)
-* **Virtualization:** VirtualBox
-* **Scripting:** Python (Automation & Log Parsing)
-* **OS:** Kali Linux, Ubuntu Server, Windows Hardening
-* **Networking:** Wireshark, TCP/IP Fundamentals
-
----
-
-### 🏗️ Featured Projects
-| Project | Description | Tech Stack |
+| Certification | Issuer | Status |
 | :--- | :--- | :--- |
-| **[Wazuh-Home-Lab]** | End-to-end deployment of a monitoring solution for cross-platform agents. | Wazuh, Linux, Sysmon |
-| **[Python-Log-Parser]** | A script to extract high-risk IP addresses from standard web server logs. | Python, Regex |
-| **[Hardening-Windows-10]** | Documentation of GPO changes and registry tweaks to reduce attack surface. | PowerShell, Windows |
+| **CompTIA Security+** | CompTIA | ✅ Achieved |
+| **Cisco CyberOps Associate** | Cisco | ✅ Achieved |
+| **Certified in Cybersecurity (CC)** | ISC2 | ✅ Achieved |
+| **Introduction to log Analysis** | Red Team Leaders | ✅ Achieved |
+
+---
+### 🔬 Home SOC Lab
+I built and operate a two-machine SOC home lab running a realistic mini-enterprise environment.
+
+#### **Infrastructure**
+| Component | Technology | Role |
+| :--- | :--- | :--- |
+| **Firewall/Router** | pfSense | Network segmentation, NAT, firewall rules |
+| **SIEM** | Wazuh | Alert generation, log correlation, compliance |
+| **Attack Machine** | Kali Linux | Red team simulations |
+| **Domain Controller** | Windows Server 2019 | Active Directory, DNS, GPO |
+| **Domain Client** | Windows Enterprise | Endpoint monitoring target |
+| **Hypervisor** | VirtualBox | VM management on both hosts |
+
+---
+
+#### **Network Architecture**
+```text
+[Internet]
+     |
+[Home Router] (192.168.x.1)
+     |
+     +--- Machine A (Windows 11 Host)
+     |    ├── pfSense VM (WAN: 192.168.8.x | LAN: 10.0.0.x | OPT1: 10.0.10.x)
+     |    └── Wazuh Server (10.0.10.x - Isolated Management Segment)
+     |
+     | (Physical Ethernet Bridge)
+     |
+     +--- Machine B (Windows 10 Host)
+          ├── Kali Linux (10.0.0.x)
+          ├── Windows Server 2019 (DC01: 10.0.0.x)
+          └── Windows Enterprise (WKSTN01: 10.0.0.x)
 
 ---
 
