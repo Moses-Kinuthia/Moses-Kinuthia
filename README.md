@@ -36,20 +36,20 @@ I built and operate a two-machine SOC home lab running a realistic mini-enterpri
 [Home Router] (192.168.x.1)
      |
      +--- Machine A (Windows 11 Host)
-     |    ├── pfSense VM (WAN: 192.168.8.x | LAN: 10.0.0.x | OPT1: 10.0.10.x)
+     |    ├── pfSense VM (WAN: 192.168.8.x | LAN: 10.0.0.x | OPT1: 10.0.10.x | OPT2: 10.0.20.x)
      |    └── Wazuh Server (10.0.10.x - Isolated Management Segment)
      |
      | (Physical Ethernet Bridge)
      |
      +--- Machine B (Windows 10 Host)
-          ├── Kali Linux (10.0.0.x)
+          ├── Kali Linux (10.0.20.x - Isolated Attacker Segment)
           ├── Windows Server 2019 (DC01: 10.0.0.x)
           └── Windows Enterprise (WKSTN01: 10.0.0.x)
 ```
 ---
 
 #### **What I've Built and Configured**
-* ✅ **pfSense firewall** with multi-interface routing (WAN/LAN/OPT1)
+* ✅ **pfSense firewall** with multi-interface routing (WAN/LAN/OPT1/OPT2)
 * ✅ **Network segmentation** — attack segment isolated from AD/management
 * ✅ **Wazuh SIEM** with live alert ingestion from 2 Windows agents
 * ✅ **Sysmon** deployed on both Windows machines for enhanced telemetry
@@ -57,8 +57,6 @@ I built and operate a two-machine SOC home lab running a realistic mini-enterpri
 * ✅ **Wazuh agents** reporting to SIEM with MITRE ATT&CK mapping
 * ✅ **pfSense firewall rules** with default-deny and explicit allow policies
 * ✅ **Centralized agent configuration** pushed from Wazuh manager
-
-👉 [**Full Lab Documentation →**][soc-home-lab](https://github.com/Moses-Kinuthia/soc-home-lab)
 
 ---
 
