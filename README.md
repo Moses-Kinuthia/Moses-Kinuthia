@@ -61,12 +61,12 @@ I built and operate a two-machine SOC home lab running a realistic mini-enterpri
 ---
 
 ### 🔴 SOC Simulations
-| # | Simulation | Attack Tools | Detection Method | MITRE Technique | Status |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| 001 | SMB Brute Force | Hydra, Metasploit | Wazuh Rule 18152 — Event ID 4625 | T1110 | ✅ Complete |
-| 002 | Network Recon | Nmap | Wazuh + Suricata alerts | T1046 | ✅ Complete |
-| 003 | SMB Enumeration | enum4linux | Wazuh event correlation | T1087 | ✅ Complete |
-| 004 | RDP Brute Force | Hydra | Event ID 4625 pattern | T1110.001 | 🔄 In Progress |
+| # | Simulation | Tools | Detection | MITRE | Status |
+|---|---|---|---|---|---|
+| 001 | Network Reconnaissance | Nmap | Wazuh custom rule 100020 — Event 5152 | T1046 | ✅ Complete |
+| 002 | SMB Credential Stuffing (ATO) | netexec | Wazuh rules 18152, 18154 — Events 4625, 4740 | T1110.003 | ✅ Complete |
+| 003 | Insider Threat — Privileged Abuse | PowerShell (native) | Wazuh rules 18110, 63102 — Events 4720, 1102 | T1078.002, T1070.001 | ✅ Complete |
+| 004 | Lateral Movement via SMB | netexec | Wazuh rules 100020, 100021 — Events 4624, 4769 | T1021.002, T1558.003 | ✅ Complete |
 
 ---
 
