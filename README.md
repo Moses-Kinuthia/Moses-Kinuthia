@@ -1,103 +1,101 @@
-# 🛡️ Moses's Security Operations Center
+# Moses Kinuthia
 
-### 👨‍💻 SOC Analyst | Blue Teamer | Threat Hunter
+### Security Operations Analyst | Banking Fraud & Detection Background
 
-Welcome to my digital workshop. I focus on **defensive security**, monitoring network telemetry, and building resilient environments. I believe that security is not a product, but a continuous process of detection and response.
+Banking professional transitioning into security operations. I bring fraud-detection,
+KYC, and AML experience from a tier-1 bank to the SOC context — where business-domain
+judgment and evidence-based investigation matter as much as technical tooling.
+
+I built and operate a full SOC home lab from scratch, run adversarial simulations,
+and document everything at analyst depth.
 
 ---
-### 🏅 Certifications
+
+## Certifications
+
 | Certification | Issuer | Status |
-| :--- | :--- | :--- |
-| **CompTIA Security+** | CompTIA | ✅ Achieved |
-| **Cisco CyberOps Associate** | Cisco | ✅ Achieved |
-| **Certified in Cybersecurity (CC)** | ISC2 | ✅ Achieved |
-| **Introduction to log Analysis** | Red Team Leaders | ✅ Achieved |
-
----
-### 🔬 Home SOC Lab
-I built and operate a two-machine SOC home lab running a realistic mini-enterprise environment.
-
-#### **Infrastructure**
-| Component | Technology | Role |
-| :--- | :--- | :--- |
-| **Firewall/Router** | pfSense | Network segmentation, NAT, firewall rules |
-| **SIEM** | Wazuh | Alert generation, log correlation, compliance |
-| **Attack Machine** | Kali Linux | Red team simulations |
-| **Domain Controller** | Windows Server 2019 | Active Directory, DNS, GPO |
-| **Domain Client** | Windows Enterprise | Endpoint monitoring target |
-| **Hypervisor** | VirtualBox | VM management on both hosts |
+|---|---|---|
+| CompTIA Security+ | CompTIA | ✅ Achieved |
+| Cisco CyberOps Associate | Cisco | ✅ Achieved |
+| Certified in Cybersecurity (CC) | ISC2 | ✅ Achieved |
+| Microsoft SC-200 | Microsoft | 🔄 In Progress |
 
 ---
 
-#### **Network Architecture**
-```text
-[Internet]
-     |
-[Home Router] (192.168.x.1)
-     |
-     +--- Machine A (Windows 11 Host)
-     |    ├── pfSense VM (WAN: 192.168.8.x | LAN: 10.0.0.x | OPT1: 10.0.10.x | OPT2: 10.0.20.x)
-     |    └── Wazuh Server (10.0.10.x - Isolated Management Segment)
-     |
-     | (Physical Ethernet Bridge)
-     |
-     +--- Machine B (Windows 10 Host)
-          ├── Kali Linux (10.0.20.x - Isolated Attacker Segment)
-          ├── Windows Server 2019 (DC01: 10.0.0.x)
-          └── Windows Enterprise (WKSTN01: 10.0.0.x)
-```
----
+## SOC Home Lab
 
-#### **What I've Built and Configured**
-* ✅ **pfSense firewall** with multi-interface routing (WAN/LAN/OPT1/OPT2)
-* ✅ **Network segmentation** — attack segment isolated from AD/management
-* ✅ **Wazuh SIEM** with live alert ingestion from 2 Windows agents
-* ✅ **Sysmon** deployed on both Windows machines for enhanced telemetry
-* ✅ **Active Directory domain (SOCLAB.local)** with DC and joined client
-* ✅ **Wazuh agents** reporting to SIEM with MITRE ATT&CK mapping
-* ✅ **pfSense firewall rules** with default-deny and explicit allow policies
-* ✅ **Centralized agent configuration** pushed from Wazuh manager
+A two-machine, four-segment lab environment built and debugged from scratch.
+
+| Component | Technology |
+|---|---|
+| Firewall / Router | pfSense (WAN / LAN / OPT1 management / OPT2 attack) |
+| SIEM / XDR | Wazuh 4.x |
+| Domain Controller | Windows Server 2019 — DC01 (SOCLAB.local) |
+| Endpoint | Windows 10 Enterprise — WKSTNO1 |
+| Attack Platform | Kali Linux (isolated OPT2 segment) |
+| Endpoint Telemetry | Sysmon deployed via GPO |
+
+Full architecture, configuration files, and build notes:
+→ [soc-home-lab](https://github.com/Moses-Kinuthia/soc-home-lab)
 
 ---
 
-### 🔴 SOC Simulations
-| # | Simulation | Tools | Detection | MITRE | Status |
-|---|---|---|---|---|---|
-| 001 | Network Reconnaissance | Nmap | Wazuh custom rule 100020 — Event 5152 | T1046 | ✅ Complete |
-| 002 | SMB Credential Stuffing (ATO) | netexec | Wazuh rules 18152, 18154 — Events 4625, 4740 | T1110.003 | ✅ Complete |
-| 003 | Insider Threat — Privileged Abuse | PowerShell (native) | Wazuh rules 18110, 63102 — Events 4720, 1102 | T1078.002, T1070.001 | ✅ Complete |
-| 004 | Lateral Movement via SMB | netexec | Wazuh rules 100020, 100021 — Events 4624, 4769 | T1021.002, T1558.003 | ✅ Complete |
+## SOC Simulations
+
+| # | Scenario | MITRE | Status | Report |
+|---|---|---|---|---|
+| 001 | SMB Brute Force → Account Takeover | T1110, T1078 | ✅ Complete | [SIM-001](https://github.com/Moses-Kinuthia/simulation-writeups/blob/main/simulations/SIM-001-SMB-Brute-Force.md) |
+| 002 | Network Reconnaissance | T1046 | ✅ Complete | [SIM-002](https://github.com/Moses-Kinuthia/simulation-writeups/blob/main/simulations/SIM-002-Network-Recon.md) |
+| 003 | AD Enumeration | T1087 | ✅ Complete | [SIM-003](https://github.com/Moses-Kinuthia/simulation-writeups/blob/main/simulations/SIM-003-AD-Enumeration.md) |
+| 004 | Insider Threat — Backdoor + Log Clearing | T1136.001, T1070.001 | ✅ Complete | [SIM-004](https://github.com/Moses-Kinuthia/simulation-writeups/blob/main/simulations/SIM-004-Insider-Threat.md) |
+| 005 | Lateral Movement — SMB Pivot + Kerberoasting | T1021.002, T1558.003 | ✅ Complete | [SIM-005](https://github.com/Moses-Kinuthia/simulation-writeups/blob/main/simulations/SIM-005-Lateral-Movement.md) |
 
 ---
 
-### 🛠️ Technical Skills
-* **Security Tools:** Wazuh, pfSense, Kali Linux, Nmap, Hydra, Metasploit, enum4linux, Sysmon, Wireshark
-* **Infrastructure:** Windows Server 2019, Active Directory, Group Policy, VirtualBox, pfSense
-* **Concepts:** SIEM / Log Analysis, Incident Detection, Firewall Rule Management, Network Segmentation, MITRE ATT&CK, Windows Event IDs
-* **Compliance:** PCI DSS, HIPAA, GDPR, NIST (Wazuh-mapped)
+## Technical Skills
+
+**Security tooling:** Wazuh, pfSense, Sysmon, Kali Linux, Nmap, Hydra, Metasploit,
+netexec, enum4linux, Wireshark
+
+**Infrastructure:** Windows Server 2019, Active Directory, Group Policy, VirtualBox
+
+**Detection & analysis:** SIEM rule writing (Wazuh OSSEC rule syntax, pcre2),
+Windows Event ID analysis, MITRE ATT&CK mapping, log-based investigation
+
+**Scripting:** Python (alert enrichment, API integration, log parsing),
+PowerShell (AD administration, attack simulation)
+
+**Compliance:** PCI-DSS, NIST CSF (via Wazuh SCA), Kenya Data Protection Act
 
 ---
 
-#### **📊 Key Windows Event IDs I Monitor**
-* `4625` Failed logon (Brute force detection)
-* `4624` Successful logon (Lateral movement)
-* `4720` Account created (Persistence)
-* `4726` Account deleted (Defense evasion)
-* `4648` Explicit credential use (Pass-the-hash)
-* `4672` Special privileges assigned (Privilege escalation)
-* `5152` WFP blocked packet (Network anomaly)
+## Key Windows Event IDs I Monitor
+
+| Event ID | Detection Purpose |
+|---|---|
+| 4624 | Successful logon — baseline and ATO correlation |
+| 4625 | Failed logon — brute force detection |
+| 4720 | Account creation — persistence detection |
+| 4728 / 4732 | Privileged group membership change |
+| 4740 | Account lockout |
+| 4769 | Kerberos TGS request — Kerberoasting detection |
+| 1102 | Security audit log cleared — critical indicator |
+| Sysmon 1 | Process creation — execution and lateral movement |
+| 4104 | PowerShell script-block — enumeration visibility |
 
 ---
 
-### 📁 Featured Repositories
-* [**soc-home-lab**][soc-home-lab](https://github.com/Moses-Kinuthia/soc-home-lab) – Full documentation of my SOC lab architecture and configs.
-* [**simulation-writeups**][simulation-writeups](https://github.com/Moses-Kinuthia/simulation-writeups) – Incident-style writeups for each SOC simulation.
+## Featured Repositories
+
+| Repository | Description |
+|---|---|
+| [Financial-Fraud-Cyber-Threat-Detection-Pipeline](https://github.com/Moses-Kinuthia/Financial-Fraud-Cyber-Threat-Detection-Pipeline) | End-to-end detection engineering: ATO, insider threat, and lateral movement — mapped to MITRE, PCI-DSS, and banking fraud scenarios |
+| [soc-home-lab](https://github.com/Moses-Kinuthia/soc-home-lab) | Full lab architecture, configuration files, and build narrative including real troubleshooting |
+| [simulation-writeups](https://github.com/Moses-Kinuthia/simulation-writeups) | Incident-style investigation reports for each simulated attack |
 
 ---
 
-### 🤝 Connect with Me
-* **LinkedIn:** www.linkedin.com/in/moses-waweru-kinuthia
+## Connect
 
-> "The quiet professional of the network; seeing everything, staying hidden until the alert fires."
-
-<!--
+- LinkedIn: [linkedin.com/in/moses-waweru-kinuthia](https://linkedin.com/in/moses-waweru-kinuthia)
+- Location: Nairobi, Kenya
